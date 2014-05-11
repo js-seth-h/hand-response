@@ -1,0 +1,27 @@
+{
+  "name": "hand-response",
+  "version": "0.0.0",
+  "description": "> similar to [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch), but faster.",
+  "main": "response.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/js-seth-h/hand-response.git"
+  },
+  "keywords": [
+    "handover",
+    "connect",
+    "response"
+  ],
+  "author": "js.seth.h@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/js-seth-h/hand-response/issues"
+  },
+  "homepage": "https://github.com/js-seth-h/hand-response",
+  "dependencies": {
+    "response-send": "0.0.1"
+  }
+}
