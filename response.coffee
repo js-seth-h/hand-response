@@ -14,7 +14,7 @@ response = ()->
 
       data = data.toString()  if Buffer.isBuffer(data)
       body = JSON.stringify(data)
-      body = hat_content + utility.escape(callback) + "(" + body + ")"
+      body = hat_content + callback + "(" + body + ")"
       res.charset = res.charset or "utf-8"
       res.setHeader "Content-Type", "application/javascript"
       res.send body

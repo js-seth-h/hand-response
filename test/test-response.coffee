@@ -10,6 +10,9 @@ describe 'hand-response', ()->
   server = http.createServer ho.make [
     response(),
     (req,res, next)->
+      return next() unless  req.url is '/jsonp'
+      res.jsonp check
+    (req,res, next)->
       return next() unless  req.url is '/redirect'
       res.redirect '/'
     (req,res, next)->
@@ -43,6 +46,17 @@ describe 'hand-response', ()->
       .get('/redirect')
       .expect(302)
       .end done
+
+
+  it "send jsonp ", (done) ->
+    check = 
+      status: 'ok'
+    request(server)
+      .get("/jsonp")
+      .expect(200)
+      .expect("Content-Type", "application/javascript")
+      .expect '\r\ncallback({"status":"ok"})', done
+
 
 
 
