@@ -4,7 +4,7 @@
   "description": "> similar to [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch), but faster.",
   "main": "response.coffee",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "set TEST=true && mocha --compilers coffee:coffee-script/register   --reporter spec"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,15 @@
   },
   "homepage": "https://github.com/js-seth-h/hand-response",
   "dependencies": {
-    "response-send": "0.0.1"
+    "response-send": "0.0.1",
+    "debug": "^0.8.1"
+  },
+  "devDependencies": {
+    "request": "^2.34.0",
+    "handover": "^0.2.1",
+    "connect": "^2.15.0",
+    "mocha": "^1.18.2",
+    "coffee-script": "^1.7.1",
+    "supertest": "^0.12.1"
   }
 }
