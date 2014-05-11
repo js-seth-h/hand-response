@@ -4,10 +4,11 @@ request = require 'supertest'
 describe 'hand-response', ()->
 
   ho = require 'handover'
+  response = require('../response')
   http = require 'http'
   check = null
   server = http.createServer ho.make [
-    require('../response')(),
+    response(),
     (req,res, next)->
       return next() unless  req.url is '/redirect'
       res.redirect '/'
@@ -43,3 +44,22 @@ describe 'hand-response', ()->
       .expect(302)
       .end done
 
+
+
+  describe 'with-connect', ()->
+
+
+    connect = require('connect') 
+
+    app = connect()
+    app.use response()
+    app.use (req,res, next)->
+      res.send( "test")
+
+
+    it 'send text', (done)-> 
+      check = "hello"
+      request(server)
+        .get('/')
+        .expect(200, check)
+        .end(done)

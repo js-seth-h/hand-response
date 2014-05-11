@@ -12,14 +12,36 @@
 
 ```coffee
 
+  ho = require 'handover'
+  server = http.createServer ho.make [
+    require('hand-response')(),
     (req,res, next)->
+      res.redirect '/'
+      res.send( "test")
+      res.send( { val : 1} )
+      res.json( {val : 1} )
+      res.jsonp( {val : 1} )
+  ]
 
+``` 
+
+```coffee
+
+connect = require('connect')
+http = require('http')
+
+app = connect()
+app.use require('hand-response')()
+app.use (req,res, next)->
       res.redirect '/'
       res.send( "test")
       res.send( { val : 1} )
       res.json( {val : 1} )
       res.jsonp( {val : 1} )
 
+
+
+app.listen(PORT)
 
 ``` 
  

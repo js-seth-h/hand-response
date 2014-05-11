@@ -1,8 +1,7 @@
 {
   "name": "hand-response",
-  "version": "0.0.2",
+  "version": "0.2.0",
   "description": "monkey patch of response, compatible with connect/express, handover",
-
   "main": "response.coffee",
   "scripts": {
     "test": "set TEST=true && mocha --compilers coffee:coffee-script/register   --reporter spec"
@@ -29,7 +28,7 @@
   "devDependencies": {
     "request": "^2.34.0",
     "handover": "^0.2.1",
-    "connect": "^2.15.0",
+    "connect": "^3.0.0-rc.2",
     "mocha": "^1.18.2",
     "coffee-script": "^1.7.1",
     "supertest": "^0.12.1"
