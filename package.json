@@ -1,7 +1,8 @@
 {
   "name": "hand-response",
-  "version": "0.0.0",
-  "description": "> similar to [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch), but faster.",
+  "version": "0.0.2",
+  "description": "monkey patch of response, compatible with connect/express, handover",
+
   "main": "response.coffee",
   "scripts": {
     "test": "set TEST=true && mocha --compilers coffee:coffee-script/register   --reporter spec"
