@@ -1,36 +1,37 @@
 {
-  "name": "hand-response",
-  "version": "0.2.1",
+  "name": "httpware-response",
+  "version": "0.0.1",
   "description": "monkey patch of response, compatible with connect/express, handover",
-  "main": "response.coffee",
+  "main": "lib",
   "scripts": {
+    "build": "coffee -c -b -o lib src  ",
+    "clean": "rm -r lib",
+    "prepublish": "npm run-script build",
+    "postpublish": "npm run-script clean",
     "test": "set TEST=true && mocha --compilers coffee:coffee-script/register   --reporter spec"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/js-seth-h/hand-response.git"
+    "url": "git://github.com/js-seth-h/httpware-response.git"
   },
   "keywords": [
-    "handover",
+    "http",
     "connect",
     "response"
   ],
   "author": "js.seth.h@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/js-seth-h/hand-response/issues"
+    "url": "https://github.com/js-seth-h/httpware-response/issues"
   },
-  "homepage": "https://github.com/js-seth-h/hand-response",
+  "homepage": "https://github.com/js-seth-h/httpware-response",
   "dependencies": {
     "response-send": "0.0.1",
     "debug": "^0.8.1"
   },
-  "devDependencies": {
-    "request": "^2.34.0",
-    "handover": "^0.2.1",
+  "devDependencies": { 
+    "flyway": "0.1.0-2", 
     "connect": "^3.0.0-rc.2",
-    "mocha": "^1.18.2",
-    "coffee-script": "^1.7.1",
     "supertest": "^0.12.1"
   }
 }

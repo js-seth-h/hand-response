@@ -1,5 +1,6 @@
 send = require 'response-send'
 
+debug = require('debug')('httpware-response')
 response = ()->
   return (req,res,next)->
     res.req = req
@@ -9,6 +10,7 @@ response = ()->
       spaces : 2
     
     res.jsonp = (data, callback = 'callback') ->
+      debug 'send jsonp', data
       # utf7 xss
       hat_content = "\r\n" 
 
@@ -20,6 +22,8 @@ response = ()->
       res.send body
 
     res.redirect = (url, status = 302) ->
+      debug 'send redirect', status, url 
+
       # status = parseInt(status, 10)  if typeof status is "string"
       res.statusCode = status
       res.setHeader "Location", url

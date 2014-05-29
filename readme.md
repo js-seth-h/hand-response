@@ -1,4 +1,4 @@
-# hand-response
+# httpware-response
 
 
 > monkey patch of response
@@ -6,15 +6,17 @@
 
 ## Features
 
-* compatible with [connect/expree][ce], [handover][ho]
+* compatible with [connect/express][ce], [flyway][flyway]
+[ce]: https://github.com/senchalabs/connect
+[flyway]: https://www.npmjs.org/package/flyway
 
 ## Support Functions.
 
 ```coffee
 
-  ho = require 'handover'
-  server = http.createServer ho.make [
-    require('hand-response')(),
+  flyway = require 'flyway'
+  server = http.createServer flyway [
+    require('httpware-response')(),
     (req,res, next)->
       res.redirect '/'
       res.send( "test")
@@ -31,7 +33,7 @@ connect = require('connect')
 http = require('http')
 
 app = connect()
-app.use require('hand-response')()
+app.use require('httpware-response')()
 app.use (req,res, next)->
       res.redirect '/'
       res.send( "test")
@@ -70,7 +72,4 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-[sh]: https://github.com/sindresorhus/grunt-shell 
-[sp]: https://github.com/cri5ti/grunt-shell-spawn
+ 

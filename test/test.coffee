@@ -1,13 +1,13 @@
 request = require 'supertest'
 
 
-describe 'hand-response', ()->
+describe 'httpware-response', ()->
 
-  ho = require 'handover'
-  response = require('../response')
+  flyway = require 'flyway'
+  response = require('../src') # require 'httpware-response'
   http = require 'http'
   check = null
-  server = http.createServer ho.make [
+  server = http.createServer flyway [
     response(),
     (req,res, next)->
       return next() unless  req.url is '/jsonp'
