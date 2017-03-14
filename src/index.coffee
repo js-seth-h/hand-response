@@ -19,7 +19,8 @@ response = ()->
       body = hat_content + callback + "(" + body + ")"
       res.charset = res.charset or "utf-8"
       res.setHeader "Content-Type", "application/javascript"
-      res.send body
+      # res.send body
+      res.end body
 
     res.redirect = (url, status = 302) ->
       debug 'send redirect', status, url 

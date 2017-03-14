@@ -1,6 +1,6 @@
 {
   "name": "httpware-response",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "monkey patch of response, compatible with connect/express, handover",
   "main": "lib",
   "scripts": {
