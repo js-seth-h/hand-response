@@ -1,6 +1,6 @@
 {
   "name": "httpware-response",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "monkey patch of response, compatible with connect/express, handover",
   "main": "lib",
   "scripts": {
@@ -25,12 +25,10 @@
     "url": "https://github.com/js-seth-h/httpware-response/issues"
   },
   "homepage": "https://github.com/js-seth-h/httpware-response",
-  "dependencies": {
-    "response-send": "0.0.1",
+  "dependencies": { 
     "debug": "^0.8.1"
   },
-  "devDependencies": { 
-    "flyway": "0.1.0-2", 
+  "devDependencies": {  
     "connect": "^3.0.0-rc.2",
     "supertest": "^0.12.1"
   }
